@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ekostartti – Ekologinen alku omaan kotiin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigaatio -->
+  <header>
+    <div class="logo">Ekostartti</div>
+    <nav id="nav">
+      <a href="#home">Etusivu</a>
+      <a href="#packages">Paketit</a>
+      <a href="#donate">Lahjoita</a>
+      <a href="#about">Meistä</a>
+      <a href="#contact">Yhteys</a>
+    </nav>
+    <button id="menu-btn">☰</button>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Ekologinen alku omaan kotiin</h1>
+      <p>Valmiit perustamispaketit opiskelijaystävällisesti ja vastuullisesti.</p>
+      <a href="#packages" class="btn">Tutustu paketteihin</a>
+    </div>
+  </section>
+
+  <!-- Pakettilista -->
+  <section id="packages" class="section">
+    <h2>Paketit</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Mini</h3>
+        <p>Perusastiasto, keittiövälineet ja tekstiilit.</p>
+        <p class="price">60–90 €</p>
+      </div>
+      <div class="card">
+        <h3>Basic</h3>
+        <p>Mini + pieniä huonekaluja ja säilytysratkaisuja.</p>
+        <p class="price">100–160 €</p>
+      </div>
+      <div class="card">
+        <h3>Maxi</h3>
+        <p>Basic + suuremmat huonekalut ja lisätekstiilit.</p>
+        <p class="price">180–260 €</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lahjoita -->
+  <section id="donate" class="section green">
+    <h2>Lahjoita tavaraa – saat 10 % hyvityksen</h2>
+    <p>Otamme vastaan hyväkuntoisia tavaroita, jotka jatkavat elämäänsä uusissa kodeissa.</p>
+    <ul>
+      <li>Nopea arvio ja nouto</li>
+      <li>Puhdistamme ja tarkistamme kaikki tuotteet</li>
+      <li>Autat opiskelijoita ja vähennät jätettä</li>
+    </ul>
+  </section>
+
+  <!-- Meistä -->
+  <section id="about" class="section pink">
+    <h2>Meistä</h2>
+    <p>Ekostartti on opiskelijalähtöinen yritys, joka auttaa ensiasunnon perustamisessa ekologisesti ja edullisesti. 
+      Haluamme rakentaa yhteisön, jossa kierrätys ja hyvä fiilis kulkevat käsi kädessä.</p>
+  </section>
+
+  <!-- Yhteydenotto -->
+  <section id="contact" class="section">
+    <h2>Ota yhteyttä</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Nimi" required />
+      <input type="email" id="email" placeholder="Sähköposti" required />
+      <textarea id="message" placeholder="Viesti" required></textarea>
+      <button type="submit" class="btn">Lähetä</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Ekostartti – Ekologinen alku omaan kotiin</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
