@@ -1,25 +1,44 @@
-
-// Näytä vuosi footerissa
-document.getElementById("year").textContent = new Date().getFullYear();
+// Päivitä vuosi footerissa
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
 // Mobiilivalikko
-const btn = document.getElementById("menu-btn");
+const menuBtn = document.getElementById("menu-btn");
 const nav = document.getElementById("nav");
-btn.addEventListener("click", () => nav.classList.toggle("show"));
 
-// Lomake mailto-lähetys
-document.getElementById("contactForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
+if (menuBtn && nav) {
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+}
 
-  if (!name || !email || !message) {
-    alert("Täytä kaikki kentät!");
-    return;
-  }
+// Yhteydenottolomake -> mailto
+const form = document.getElementById("contactForm");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  // Vaihda osoite omaan sähköpostiisi
-  const mailto = `mailto:ekostartti@example.com?subject=Yhteydenotto Ekostartista&body=Nimi: ${name}%0D%0ASähköposti: ${email}%0D%0A%0D%0AViesti:%0D%0A${message}`;
-  window.location.href = mailto;
-});
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Täytä kaikki kentät.");
+      return;
+    }
+
+    // VAIHDA tämä osoite omaan sähköpostiisi
+    const targetEmail = "ekostartti@example.com";
+
+    const body =
+      `Nimi: ${name}%0D%0A` +
+      `Sähköposti: ${email}%0D%0A%0D%0A` +
+      `Viesti:%0D%0A${message}`;
+
+    const mailtoLink = `mailto:${targetEmail}?subject=Yhteydenotto Ekostartista&body=${body}`;
+
+    window.location.href = mailtoLink;
+  });
+}
